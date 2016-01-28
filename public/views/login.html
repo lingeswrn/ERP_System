@@ -1,0 +1,55 @@
+<div ng-controller="loginPageCtrl">
+	<legend class="legend">Login</legend>
+	<div class="col-md-4 col-sm-4"></div>
+	<div class="col-md-4 col-sm-4 well">
+		<h4 class="text-center" style="color:#FF7052">{{head}}</h4>
+		<div class="alert {{stsclass}} fade in" style="margin-top:10px;">		
+			<strong>{{message}}</strong>
+		</div>
+		<form class="login" ng-show="openLogin">
+			
+			<div class="input">
+				<input type="email" ng-model="login.email" placeholder="Email*" class="form-control" required />
+			  <span><i class="fa fa-envelope-o"></i></span>
+			</div>
+			<div class="input">
+				<input type="password" ng-model="login.password"placeholder="Password*" class="form-control" required />
+			  <span><i class="fa fa-lock"></i></span>
+			</div>
+			<div>
+				<button type="button" class="btn btn-block btn-warning" ng-click="loginUser()">Login</button>
+				<button type="button" class="btn btn-block btn-info" ng-click="openSignupForm()">Sign-Up</button>
+			</div>
+		</form>	
+		<form class="login" ng-show="openSignup">			
+			<div class="input">
+				<input type="text" ng-model="signup.name" placeholder="Name*" class="form-control" required />
+			  <span><i class="fa fa-envelope-o"></i></span>
+			</div>
+			<div class="input">
+				<input type="text" ng-model="signup.email" placeholder="Email*" class="form-control" required />
+			  <span><i class="fa fa-envelope-o"></i></span>
+			</div>
+			<div class="input">
+				<input type="password" ng-model="signup.password" placeholder="Password*" class="form-control" required />
+			  <span><i class="fa fa-lock"></i></span>
+			</div>
+			<div>
+				<button type="button" class="btn btn-block btn-warning" ng-click="sigupUser()" >Sign-Up</button>
+				<button type="button" class="btn btn-block btn-info" ng-click="openLoginForm()">Login</button>
+			</div>
+		</form>
+	</div>
+	<div class="col-md-4 col-sm-4"></div>
+</div>
+<script>
+	$( ".input" ).focusin(function() {
+  $( this ).find( "span" ).animate({"opacity":"0"}, 200);
+});
+
+$( ".input" ).focusout(function() {
+  $( this ).find( "span" ).animate({"opacity":"1"}, 300);
+});
+
+
+</script>

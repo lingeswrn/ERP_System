@@ -1,13 +1,20 @@
 <html ng-app="erpApp">
 <head>
 	<link rel="stylesheet" type="text/css" href="../asserts/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../asserts/css/style.css">
 </head>
 <body>
-	<input type="text" class="form-control"/>
+	
+	<div ng-view></div>
+	
 	<script type="text/javascript" src="../asserts/js/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="../asserts/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../asserts/js/angular.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
 	
 	<!-- Controllers -->
+	<script type="text/javascript" src="../controller/app.js"></script>
+	<script type="text/javascript" src="../controller/homePageCtrl.js"></script>
+	<script type="text/javascript" src="../controller/loginPageCtrl.js"></script>
 </body>
 </html>
