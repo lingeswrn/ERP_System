@@ -1,4 +1,4 @@
-module.exports = function(app,UserTable,session){
+module.exports = function(app,UserTable){
 	var ses;
 	app.post('/signupUserData',function(req,res){
 		UserTable.findOne({ email: req.body.email}, function(err, result){			
@@ -20,8 +20,7 @@ module.exports = function(app,UserTable,session){
 	app.post('/loginUserData',function(req,res){
 		UserTable.findOne({email: req.body.email, password: req.body.password}, function(err,result){
 			if(result != null){
-				ses = req.session;
-				res.json(ses);
+				res.send(result);
 			}
 		});
 	});

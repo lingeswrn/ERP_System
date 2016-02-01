@@ -34,13 +34,21 @@ app.controller('loginPageCtrl',function($scope,$http){
 		}
 	}
 	$scope.loginUser = function(){
-		
+		console.log($scope.login);
 		if(!angular.equals({}, $scope.login) && Object.keys($scope.login).length == 2){
-			$http.post('/loginUserData',$scope.login).success(function(response){				
-				if(Object.keys(response).length != 0)
+			
+			$http.post('/loginUserData',$scope.login).success(function(response){	
+				alert(response);			
+				if(response != 0)
 					location.replace("http://localhost:8000/#/home");
+				else{
+					$scope.sts = true;
+					$scope.stsclass = 'alert-danger';
+					$scope.message = 'Wrong login input';
+				}
 			});
 		}else{
+			
 			$scope.sts = true;
 			$scope.stsclass = 'alert-danger';
 			$scope.message = 'Fill all the fields';
